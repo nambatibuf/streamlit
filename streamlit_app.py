@@ -1,6 +1,16 @@
 import streamlit as st
 from PIL import Image
 
+# Page title and favicon for the entire app
+# This should be the first Streamlit function called in your app
+st.set_page_config(page_title="My Portfolio", page_icon=":bar_chart:", layout="wide")
+
+# Define the page navigation
+st.sidebar.title('Navigation')
+page = st.sidebar.radio('Go to', ['Home', 'Power BI Report', 'ML Model'])
+
+# ... Rest of your code follows
+
 # Define the page navigation
 st.sidebar.title('Navigation')
 page = st.sidebar.radio('Go to', ['Home', 'Power BI Report', 'ML Model'])
