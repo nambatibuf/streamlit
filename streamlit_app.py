@@ -38,14 +38,7 @@ st.markdown("""
 # Home Page
 if page == 'Home':
     # Use the st.image function for displaying a round image by setting the style directly
-    st.markdown(
-        """
-        <div style="text-align:center;">
-            <img src="your_image_url.jpeg">
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+    st.image('your_image_url.jpeg', width=300) 
     # Your greeting and contact information
     st.markdown("""
     ### Hi, I’m Nikhil Ambati 👋
