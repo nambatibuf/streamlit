@@ -41,7 +41,7 @@ if page == 'Home':
     st.markdown(
         """
         <div style="text-align:center;">
-            <img src="your_image_url.jpeg" alt="Nikhil Ambati" style="border-radius:50%; width:200px; height:200px; object-fit:cover; margin-bottom:10px;">
+            <img src="https://github.com/nambatibuf/streamlit/blob/8c83389532e8c9d4a35c3127cc1345e96e4addb0/your_image_url.jpeg" alt="Nikhil Ambati" style="border-radius:50%; width:200px; height:200px; object-fit:cover; margin-bottom:10px;">
         </div>
         """,
         unsafe_allow_html=True,
