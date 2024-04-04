@@ -172,7 +172,7 @@ elif page == 'Smart Farming':
     The backbone of our initiative is the Azure Data Factory (ADF) pipeline, engineered for high-performance data handling:
     
     - **Data Ingestion**: Scheduled tasks faithfully gather the USDA datasets at 3:30 AM daily, ensuring that our data is as fresh as the morning harvest.
-    - **Extraction and Transformation**: Our pipeline adeptly processes the CSV files, converting them into Parquet format within Azure Data Lake Storage Gen2—a testament to efficiency and scalability.
+    - **Extraction and Transformation**: Our pipeline adeptly processes the ZIP files, converting them into Parquet format within Azure Data Lake Storage Gen2—a testament to efficiency and scalability.
     - **Orchestration and Logging**: Orchestrated workflows and meticulous logging are the unsung heroes, ensuring smooth operations and transparent process tracking.
     - **Databricks Ecosystem**: Delta Lake on Databricks forms the sanctum for our data, enshrined with ACID transactions, while Hive metastore integration provides a structured query layer for analysis.
 
