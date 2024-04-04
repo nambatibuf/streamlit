@@ -93,52 +93,56 @@ elif page == 'Power BI Report':
     )
     
     # ML Model Page
+# ... your existing Streamlit code ...
+
 elif page == 'ML Model':
-    st.title('ML Model Prediction')
+    st.title('Databricks ML Model Prediction')
 
-    # Input form for the data that you want to send to the ML model
-    with st.form("prediction_form"):
-        # Replace 'input1', 'input2', etc., with your actual input fields
-        input1 = st.text_input("Input 1")
-        input2 = st.text_input("Input 2")
-        input3 = st.text_input("Input 3")
-        input4 = st.text_input("Input 4")
-        input5 = st.text_input("Input 5")
-        # Add more inputs as required by your model
+    # Define inputs for the user to fill in
+    prod_practice_desc = st.text_input("Production Practice Description")
+    util_practice_desc = st.text_input("Utilization Practice Description")
+    commodity_desc = st.text_input("Commodity Description")
+    statisticcat_desc = st.text_input("Statistic Category Description")
+    year = st.number_input("Year", min_value=1900, max_value=2100, step=1)
 
-        # Form submission button
-        submitted = st.form_submit_button("Predict")
-        if submitted:
-            # Replace with the actual URL of your Databricks ML model endpoint
-            url = "https://adb-5969458442430489.9.azuredatabricks.net/serving-endpoints/temp/invocations"
-            headers = {
-                'Authorization': 'Bearer <your-access-token>',
-                'Content-Type': 'application/json',
-            }
-            
-            # The data structure here should match the expected input by your ML model
-            data = {
-                "input1": input1,
-                "input2": input2,
-                "input3": input3,
-                "input4": input4,
-                "input5": input5,
-                # Add more key-value pairs as required by your model
-            }
-            
-            # Call the Databricks endpoint
-            response = requests.request("POST", url, headers=headers, json=data)
-            
-            if response.status_code == 200:
-                prediction = response.json()
-                st.success(f"Prediction: {prediction}")
-            else:
-                st.error("Failed to get prediction")
+    # Button to make prediction
+    if st.button('Predict'):
+        # Collect the inputs into a list
+        input_data = [
+            prod_practice_desc,
+            util_practice_desc,
+            commodity_desc,
+            statisticcat_desc,
+            int(year)  # Ensure the year is an integer
+        ]
+        
+        # Create the payload for the request
+        data_json = create_json_payload(input_data)
+        
+        # URL of your Databricks endpoint
+        url = 'https://adb-5969458442430489.9.azuredatabricks.net/serving-endpoints/temp/invocations'
+        
+        # Headers including the authorization token
+        # NOTE: Store your token in Streamlit's secrets or as an environment variable for security
+        headers = {
+            'Authorization': f'Bearer {"your_databricks_token"}',
+            'Content-Type': 'application/json'
+        }
+        
+        # Send the request
+        response = requests.post(url, headers=headers, json=data_json)
+        
+        # Check if the request was successful
+        if response.status_code == 200:
+            prediction = response.json()
+            st.success(f"Prediction: {prediction}")
+        else:
+            st.error(f"Failed to get prediction. Status code: {response.status_code}, Response: {response.text}")
 
-    # Clear the cache if you want to make sure the session state is cleared
-    if st.button("Clear form"):
-        st.legacy_caching.clear_cache()
-        st.experimental_rerun()
+    # Add the content for the Footer
+    st.sidebar.markdown('---')
+    st.sidebar.info('This Streamlit app showcases the portfolio of Nikhil Ambati, a Data Engineer and Data Scientist.')
+
 
 st.sidebar.markdown('---')
 st.sidebar.info('This Streamlit app showcases the portfolio of Nikhil Ambati, a Data Engineer and Data Scientist.')
