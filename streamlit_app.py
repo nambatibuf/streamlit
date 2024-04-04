@@ -33,7 +33,7 @@ st.markdown("""
 
 # Home Page
 if page == 'Home':
-    st.image('path_to_your_image.jpg', width=300)  # Adjust the width as needed
+    st.image('your_image_url.jpg.jpeg', width=300)  # Adjust the width as needed
     st.title('HI THERE 👋')
     st.subheader('I AM A DATA SCIENTIST WHO:')
     st.markdown("""
