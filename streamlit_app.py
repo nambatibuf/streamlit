@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-from streamlit import caching
+
 
 # Page title and favicon for the entire app
 st.set_page_config(page_title="Nikhil Ambati's Portfolio", page_icon=":bar_chart:", layout="wide")
@@ -137,8 +137,8 @@ elif page == 'ML Model':
 
     # Clear the cache if you want to make sure the session state is cleared
     if st.button("Clear form"):
-        caching.clear_cache()
         st.legacy_caching.clear_cache()
+        st.experimental_rerun()
 
 st.sidebar.markdown('---')
 st.sidebar.info('This Streamlit app showcases the portfolio of Nikhil Ambati, a Data Engineer and Data Scientist.')
