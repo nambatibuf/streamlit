@@ -1,5 +1,4 @@
 import streamlit as st
-from PIL import Image
 
 # Page title and favicon for the entire app
 # This should be the first Streamlit function called in your app
@@ -7,28 +6,16 @@ st.set_page_config(page_title="My Portfolio", page_icon=":bar_chart:", layout="w
 
 # Define the page navigation
 st.sidebar.title('Navigation')
-page = st.sidebar.radio('Go to', ['Home', 'Power BI Report', 'ML Model'])
-
-# ... Rest of your code follows
-
-# Define the page navigation
-st.sidebar.title('Navigation')
-page = st.sidebar.radio('Go to', ['Home', 'Power BI Report', 'ML Model'])
+# Ensure that the radio button has a unique key in case there are other radio buttons
+page = st.sidebar.radio('Go to', ['Home', 'Power BI Report', 'ML Model'], key='main_navigation')
 
 # Define the Power BI Embed URL
 powerbi_embed_url = "https://app.powerbi.com/view?r=eyJrIjoiMmIwZGE0ZDgtN2RkMy00MjlhLWI5NDktMjhiNjUyYjBiMmM1IiwidCI6Ijk2NDY0YThhLWY4ZWQtNDBiMS05OWUyLTVmNmI1MGEyMDI1MCIsImMiOjN9"
 
-# Page title and favicon for the entire app
-st.set_page_config(page_title="My Portfolio", page_icon=":bar_chart:", layout="wide")
-
-# Load your image
-# Make sure to have an image named 'your_image.jpg' in the same directory as your script
-image = Image.open('your_image.jpg')
-
 # Apply custom CSS across all pages to maintain a consistent style
 st.markdown("""
     <style>
-        .reportview-container .main .block-container{
+        .reportview-container .main .block-container {
             padding-top: 0;
             padding-right: 0;
             padding-left: 0;
@@ -46,9 +33,9 @@ st.markdown("""
 
 # Home Page
 if page == 'Home':
-    st.header('HI THERE 👋')
-    st.image(image, width=300)  # You can adjust the width as needed
-    st.subheader('I AM A DATA SCIENTIST WHO :')
+    st.image('path_to_your_image.jpg', width=300)  # Adjust the width as needed
+    st.title('HI THERE 👋')
+    st.subheader('I AM A DATA SCIENTIST WHO:')
     st.markdown("""
     * 🔥 loves to solve complex problems in diverse domains
     * 🌍 is currently working in the field of Climate Change
@@ -63,16 +50,15 @@ elif page == 'Power BI Report':
         f"""
         <iframe title="Power BI Report" width="100%" height="100vh" src="{powerbi_embed_url}" frameborder="0" allowFullScreen="true"></iframe>
         """,
-        unsafe_allow_html=True,
+        unsafe_allow_html=True
     )
 
 # ML Model Page
 elif page == 'ML Model':
-    st.header('ML Model')
+    st.title('ML Model')
     # Display your ML model content or widget here
     st.write('ML Model details to be added here.')
 
-# Footer
+# Add the content for the Footer
 st.sidebar.markdown('---')
 st.sidebar.info('This is a simple multi-page Streamlit app to showcase a portfolio with a Power BI report and an ML model.')
-
