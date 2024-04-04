@@ -9,6 +9,19 @@ st.set_page_config(page_title="Nikhil Ambati's Portfolio", page_icon=":bar_chart
 st.sidebar.title('Navigation')
 page = st.sidebar.radio('Go to', ['Home', 'Power BI Report', 'ML Model'], key='main_navigation')
 
+def create_json_payload(input_data):
+    return {
+        "dataframe_split": {
+            "columns": [
+                "PRODN_PRACTICE_DESC",
+                "UTIL_PRACTICE_DESC",
+                "COMMODITY_DESC",
+                "STATISTICCAT_DESC",
+                "year"
+            ],
+            "data": [input_data]
+        }
+    }
 # Define the Power BI Embed URL
 powerbi_embed_url = "https://app.powerbi.com/view?r=eyJrIjoiMmIwZGE0ZDgtN2RkMy00MjlhLWI5NDktMjhiNjUyYjBiMmM1IiwidCI6Ijk2NDY0YThhLWY4ZWQtNDBiMS05OWUyLTVmNmI1MGEyMDI1MCIsImMiOjN9"
 
