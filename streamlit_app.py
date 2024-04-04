@@ -37,15 +37,20 @@ st.markdown("""
 
 # Home Page
 if page == 'Home':
-    # Display the round image using the "image-round" class
-    st.markdown(f"<div style='text-align: center'><img class='image-round' src='your_image_url.jpg.jpeg'></div>", unsafe_allow_html=True)
-    # ... rest of your home page content ...
-    # Make sure to update the rest of the home page content according to the resume details provided above
-
-# ... rest of your code ...
-    st.title('Hi, I’m Nikhil Ambati 👋')
-    st.write('Buffalo, NY | (716)-247-3355 | [Email](mailto:nambati@buffalo.edu) | [LinkedIn](https://linkedin.com/in/nikhil-ambati) | [GitHub](https://github.com/nambatibuf)')
-    
+    # Use the st.image function for displaying a round image by setting the style directly
+    st.markdown(
+        """
+        <div style="text-align:center;">
+            <img src="your_image_url.jpg.jpeg" alt="Nikhil Ambati" style="border-radius:50%; width:200px; height:200px; object-fit:cover; margin-bottom:10px;">
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    # Your greeting and contact information
+    st.markdown("""
+    ### Hi, I’m Nikhil Ambati 👋
+    Buffalo, NY | [(716)-247-3355](tel:+17162473355) | [Email](mailto:nambati@buffalo.edu) | [LinkedIn](https://linkedin.com/in/nikhil-ambati) | [GitHub](https://github.com/nambatibuf)
+    """, unsafe_allow_html=True)
     st.markdown("### About Me")
     st.markdown("""
     - 🎓 Pursuing a Master of Science in Data Science from SUNY Buffalo with coursework in Statistical Learning, Data Mining, and Machine Learning.
