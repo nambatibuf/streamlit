@@ -34,7 +34,18 @@ st.markdown("""
         }
     </style>
     """, unsafe_allow_html=True)
-
+st.markdown(
+    """
+    <style>
+        /* Make the image round */
+        .st-bj {
+            border-radius: 50%;
+            overflow: hidden;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 # Home Page
 if page == 'Home':
     # Use the st.markdown function to display the image with round shape
