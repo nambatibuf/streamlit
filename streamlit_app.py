@@ -1,18 +1,16 @@
 import streamlit as st
 
 # Page title and favicon for the entire app
-# This should be the first Streamlit function called in your app
-st.set_page_config(page_title="My Portfolio", page_icon=":bar_chart:", layout="wide")
+st.set_page_config(page_title="Nikhil Ambati's Portfolio", page_icon=":bar_chart:", layout="wide")
 
 # Define the page navigation
 st.sidebar.title('Navigation')
-# Ensure that the radio button has a unique key in case there are other radio buttons
 page = st.sidebar.radio('Go to', ['Home', 'Power BI Report', 'ML Model'], key='main_navigation')
 
 # Define the Power BI Embed URL
 powerbi_embed_url = "https://app.powerbi.com/view?r=eyJrIjoiMmIwZGE0ZDgtN2RkMy00MjlhLWI5NDktMjhiNjUyYjBiMmM1IiwidCI6Ijk2NDY0YThhLWY4ZWQtNDBiMS05OWUyLTVmNmI1MGEyMDI1MCIsImMiOjN9"
 
-# Apply custom CSS across all pages to maintain a consistent style
+# Apply custom CSS across all pages to maintain a consistent style, including a round image style
 st.markdown("""
     <style>
         .reportview-container .main .block-container {
@@ -28,37 +26,77 @@ st.markdown("""
         iframe {
             height: 100vh;
         }
+        .image-round {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
     </style>
     """, unsafe_allow_html=True)
 
 # Home Page
 if page == 'Home':
-    st.image('your_image_url.jpg.jpeg', width=300)  # Adjust the width as needed
-    st.title('HI THERE 👋')
-    st.subheader('I AM A DATA SCIENTIST WHO:')
-    st.markdown("""
-    * 🔥 loves to solve complex problems in diverse domains
-    * 🌍 is currently working in the field of Climate Change
-    * 🧬 handled challenging tasks in Bioinformatics & Telecommunications
-    * 💻 plays with all kinds of data structures - text, image, graph, numerical etc
-    * 🌟 at the end of the day, aims to make the data shine!
-    """)
+    # Display the round image using the "image-round" class
+    st.markdown(f"<div style='text-align: center'><img class='image-round' src='your_image_url.jpg'></div>", unsafe_allow_html=True)
+    # ... rest of your home page content ...
+    # Make sure to update the rest of the home page content according to the resume details provided above
+
+# ... rest of your code ...
+st.title('Hi, I’m Nikhil Ambati 👋')
+st.write('Buffalo, NY | (716)-247-3355 | [Email](mailto:nambati@buffalo.edu) | [LinkedIn](https://linkedin.com/in/nikhil-ambati) | [GitHub](https://github.com/nambatibuf)')
+
+st.markdown("### About Me")
+st.markdown("""
+- 🎓 Pursuing a Master of Science in Data Science from SUNY Buffalo with coursework in Statistical Learning, Data Mining, and Machine Learning.
+- 💼 Experienced Data Engineer with professional experience at Tata Consultancy Services and Accenture Technology.
+- 🌟 Passionate about transforming complex data into actionable insights and enhancing decision-making processes.
+- 🛠️ Technical proficiency in Python, Scala, SQL, AWS, Azure, and big data technologies.
+- 💡 Led projects such as Sales Flow Pro and transformed sales data into insights with AI-driven SQL queries.
+- 🚀 Aim to leverage my skills in data analysis and engineering to make a significant impact in the field of data science.
+""")
+
+st.markdown("### Projects")
+st.markdown("""
+- **Sales Flow Pro**: Developed an analytics pipeline integrating Python, Airflow, GCP, and BigQuery, culminating in a Looker Studio dashboard for data quality checks.
+- **AI-Driven SQL Queries**: Transformed sales data into BCNF compliance using PySpark and PostgreSQL, and created a local website for AI-driven SQL query capabilities.
+""")
+
+st.markdown("### Technical Skills")
+st.markdown("""
+- **Languages**: Python, R, Scala, SQL, C++, Java, SAP ABAP, MATLAB
+- **Technologies**: AWS, Azure, Apache Spark, Hadoop, GCP, Docker, Linux, Tableau, Power BI
+- **Libraries & Databases**: SQL Server, PostgreSQL, MySQL, Snowflake, MongoDB, Oracle, SAP S/4 HANA
+- **Certifications**: Azure Data Engineer Associate, Data Fundamentals, AI Fundamentals
+""")
+
+st.markdown("### Education")
+st.markdown("""
+- **Master of Science in Data Science**  
+  State University Of New York At Buffalo  
+  January 2023 – May 2024  
+  Courses: Statistical Learning & Data Mining, Machine Learning, Data Models & Query Languages, Predictive Analytics.
+- **B.E. in Information Technology**  
+  University Of Mumbai  
+  August 2015 – June 2019  
+  Courses: Advance Database Management Systems, Big Data Analytics & Cloud Computing, Software Engineering.
+""")
 
 # Power BI Report Page
 elif page == 'Power BI Report':
-    st.markdown(
-        f"""
-        <iframe title="Power BI Report" width="100%" height="100vh" src="{powerbi_embed_url}" frameborder="0" allowFullScreen="true"></iframe>
-        """,
-        unsafe_allow_html=True
-    )
+st.markdown(
+    f"""
+    <iframe title="Power BI Report" width="100%" height="100vh" src="{powerbi_embed_url}" frameborder="0" allowFullScreen="true"></iframe>
+    """,
+    unsafe_allow_html=True
+)
 
 # ML Model Page
 elif page == 'ML Model':
-    st.title('ML Model')
-    # Display your ML model content or widget here
-    st.write('ML Model details to be added here.')
+st.title('ML Model')
+# Display your ML model content or widget here
+st.write('ML Model details to be added here.')
 
 # Add the content for the Footer
 st.sidebar.markdown('---')
-st.sidebar.info('This is a simple multi-page Streamlit app to showcase a portfolio with a Power BI report and an ML model.')
+st.sidebar.info('This Streamlit app showcases the portfolio of Nikhil Ambati, a Data Engineer and Data Scientist.')
