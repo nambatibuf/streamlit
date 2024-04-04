@@ -43,60 +43,60 @@ if page == 'Home':
     # Make sure to update the rest of the home page content according to the resume details provided above
 
 # ... rest of your code ...
-st.title('Hi, I’m Nikhil Ambati 👋')
-st.write('Buffalo, NY | (716)-247-3355 | [Email](mailto:nambati@buffalo.edu) | [LinkedIn](https://linkedin.com/in/nikhil-ambati) | [GitHub](https://github.com/nambatibuf)')
-
-st.markdown("### About Me")
-st.markdown("""
-- 🎓 Pursuing a Master of Science in Data Science from SUNY Buffalo with coursework in Statistical Learning, Data Mining, and Machine Learning.
-- 💼 Experienced Data Engineer with professional experience at Tata Consultancy Services and Accenture Technology.
-- 🌟 Passionate about transforming complex data into actionable insights and enhancing decision-making processes.
-- 🛠️ Technical proficiency in Python, Scala, SQL, AWS, Azure, and big data technologies.
-- 💡 Led projects such as Sales Flow Pro and transformed sales data into insights with AI-driven SQL queries.
-- 🚀 Aim to leverage my skills in data analysis and engineering to make a significant impact in the field of data science.
-""")
-
-st.markdown("### Projects")
-st.markdown("""
-- **Sales Flow Pro**: Developed an analytics pipeline integrating Python, Airflow, GCP, and BigQuery, culminating in a Looker Studio dashboard for data quality checks.
-- **AI-Driven SQL Queries**: Transformed sales data into BCNF compliance using PySpark and PostgreSQL, and created a local website for AI-driven SQL query capabilities.
-""")
-
-st.markdown("### Technical Skills")
-st.markdown("""
-- **Languages**: Python, R, Scala, SQL, C++, Java, SAP ABAP, MATLAB
-- **Technologies**: AWS, Azure, Apache Spark, Hadoop, GCP, Docker, Linux, Tableau, Power BI
-- **Libraries & Databases**: SQL Server, PostgreSQL, MySQL, Snowflake, MongoDB, Oracle, SAP S/4 HANA
-- **Certifications**: Azure Data Engineer Associate, Data Fundamentals, AI Fundamentals
-""")
-
-st.markdown("### Education")
-st.markdown("""
-- **Master of Science in Data Science**  
-  State University Of New York At Buffalo  
-  January 2023 – May 2024  
-  Courses: Statistical Learning & Data Mining, Machine Learning, Data Models & Query Languages, Predictive Analytics.
-- **B.E. in Information Technology**  
-  University Of Mumbai  
-  August 2015 – June 2019  
-  Courses: Advance Database Management Systems, Big Data Analytics & Cloud Computing, Software Engineering.
-""")
-
-# Power BI Report Page
-elif page == 'Power BI Report':
-st.markdown(
-    f"""
-    <iframe title="Power BI Report" width="100%" height="100vh" src="{powerbi_embed_url}" frameborder="0" allowFullScreen="true"></iframe>
-    """,
-    unsafe_allow_html=True
-)
-
-# ML Model Page
-elif page == 'ML Model':
-st.title('ML Model')
-# Display your ML model content or widget here
-st.write('ML Model details to be added here.')
-
-# Add the content for the Footer
-st.sidebar.markdown('---')
-st.sidebar.info('This Streamlit app showcases the portfolio of Nikhil Ambati, a Data Engineer and Data Scientist.')
+    st.title('Hi, I’m Nikhil Ambati 👋')
+    st.write('Buffalo, NY | (716)-247-3355 | [Email](mailto:nambati@buffalo.edu) | [LinkedIn](https://linkedin.com/in/nikhil-ambati) | [GitHub](https://github.com/nambatibuf)')
+    
+    st.markdown("### About Me")
+    st.markdown("""
+    - 🎓 Pursuing a Master of Science in Data Science from SUNY Buffalo with coursework in Statistical Learning, Data Mining, and Machine Learning.
+    - 💼 Experienced Data Engineer with professional experience at Tata Consultancy Services and Accenture Technology.
+    - 🌟 Passionate about transforming complex data into actionable insights and enhancing decision-making processes.
+    - 🛠️ Technical proficiency in Python, Scala, SQL, AWS, Azure, and big data technologies.
+    - 💡 Led projects such as Sales Flow Pro and transformed sales data into insights with AI-driven SQL queries.
+    - 🚀 Aim to leverage my skills in data analysis and engineering to make a significant impact in the field of data science.
+    """)
+    
+    st.markdown("### Projects")
+    st.markdown("""
+    - **Sales Flow Pro**: Developed an analytics pipeline integrating Python, Airflow, GCP, and BigQuery, culminating in a Looker Studio dashboard for data quality checks.
+    - **AI-Driven SQL Queries**: Transformed sales data into BCNF compliance using PySpark and PostgreSQL, and created a local website for AI-driven SQL query capabilities.
+    """)
+    
+    st.markdown("### Technical Skills")
+    st.markdown("""
+    - **Languages**: Python, R, Scala, SQL, C++, Java, SAP ABAP, MATLAB
+    - **Technologies**: AWS, Azure, Apache Spark, Hadoop, GCP, Docker, Linux, Tableau, Power BI
+    - **Libraries & Databases**: SQL Server, PostgreSQL, MySQL, Snowflake, MongoDB, Oracle, SAP S/4 HANA
+    - **Certifications**: Azure Data Engineer Associate, Data Fundamentals, AI Fundamentals
+    """)
+    
+    st.markdown("### Education")
+    st.markdown("""
+    - **Master of Science in Data Science**  
+      State University Of New York At Buffalo  
+      January 2023 – May 2024  
+      Courses: Statistical Learning & Data Mining, Machine Learning, Data Models & Query Languages, Predictive Analytics.
+    - **B.E. in Information Technology**  
+      University Of Mumbai  
+      August 2015 – June 2019  
+      Courses: Advance Database Management Systems, Big Data Analytics & Cloud Computing, Software Engineering.
+    """)
+    
+    # Power BI Report Page
+    elif page == 'Power BI Report':
+    st.markdown(
+        f"""
+        <iframe title="Power BI Report" width="100%" height="100vh" src="{powerbi_embed_url}" frameborder="0" allowFullScreen="true"></iframe>
+        """,
+        unsafe_allow_html=True
+    )
+    
+    # ML Model Page
+    elif page == 'ML Model':
+    st.title('ML Model')
+    # Display your ML model content or widget here
+    st.write('ML Model details to be added here.')
+    
+    # Add the content for the Footer
+    st.sidebar.markdown('---')
+    st.sidebar.info('This Streamlit app showcases the portfolio of Nikhil Ambati, a Data Engineer and Data Scientist.')
