@@ -92,11 +92,11 @@ elif page == 'Power BI Report':
     )
     
     # ML Model Page
-    elif page == 'ML Model':
+elif page == 'ML Model':
     st.title('ML Model')
     # Display your ML model content or widget here
     st.write('ML Model details to be added here.')
     
     # Add the content for the Footer
-    st.sidebar.markdown('---')
-    st.sidebar.info('This Streamlit app showcases the portfolio of Nikhil Ambati, a Data Engineer and Data Scientist.')
+st.sidebar.markdown('---')
+st.sidebar.info('This Streamlit app showcases the portfolio of Nikhil Ambati, a Data Engineer and Data Scientist.')
