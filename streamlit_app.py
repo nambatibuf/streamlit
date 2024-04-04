@@ -68,15 +68,17 @@ if page == 'Home':
     - 🌟 Passionate about transforming complex data into actionable insights and enhancing decision-making processes.
     - 🛠️ Technical proficiency in Python, Scala, SQL, AWS, Azure, and big data technologies.
     - 💡 Led projects such as Sales Flow Pro and transformed sales data into insights with AI-driven SQL queries.
-    - 🚀 Aim to leverage my skills in data analysis and engineering to make a significant impact in the field of data science.
+    - 🚀 Aim to leverage my skills in data engineering to make a significant impact in the field of data science.
     """)
     
+    st.markdown("### Projects")
     st.markdown("""
     - **Sales Flow Pro**: Developed an analytics pipeline integrating Python, Airflow, GCP, and BigQuery, culminating in a Looker Studio dashboard for data quality checks.
     - **AI-Driven SQL Queries**: Transformed sales data into BCNF compliance using PySpark and PostgreSQL, and created a local website for AI-driven SQL query capabilities.
-    - **Data-Driven Agricultural Insights**: Automated data pipeline utilizing Azure Data Factory, Databricks, and Delta Lake to process USDA datasets. This ensures real-time, actionable insights through Power BI visualizations and a predictive analytics dashboard hosted online.
-    - **Advanced Analytics and Machine Learning Integration**: Developed sophisticated machine learning models to predict crop yields, classifying them as high or low. Enabled monthly retraining to refine predictions, leveraging transformed data in Delta Lake.
-    - **User-Centric Solution Deployment**: Launched an interactive web platform allowing users to input parameters and receive yield predictions. This showcases a commitment to accessibility and user engagement in the agricultural sector.
+    - **Data-Driven Agricultural Insights**:
+        - Automated data pipeline utilizing Azure Data Factory, Databricks, and Delta Lake to process USDA datasets. This ensures real-time, actionable insights through Power BI visualizations and a predictive analytics dashboard hosted online.
+        - Developed sophisticated machine learning models to predict crop yields, classifying them as high or low. Enabled monthly retraining to refine predictions, leveraging transformed data in Delta Lake.
+        - Launched an interactive web platform allowing users to input parameters and receive yield predictions. This showcases a commitment to accessibility and user engagement in the agricultural sector.
     """, unsafe_allow_html=True)
     
     st.markdown("### Technical Skills")
