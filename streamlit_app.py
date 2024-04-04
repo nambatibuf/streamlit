@@ -138,7 +138,7 @@ elif page == 'ML Model':
         # Headers including the authorization token
         # NOTE: Store your token in Streamlit's secrets or as an environment variable for security
         headers = {
-            'Authorization': f'Bearer {"your_databricks_token"}',
+            'Authorization': f'Bearer {"dapic2ee1f0502ff40015b06a22379d25e12-3"}',
             'Content-Type': 'application/json'
         }
         
