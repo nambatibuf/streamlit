@@ -83,7 +83,7 @@ if page == 'Home':
     """)
     
     # Power BI Report Page
-    elif page == 'Power BI Report':
+elif page == 'Power BI Report':
     st.markdown(
         f"""
         <iframe title="Power BI Report" width="100%" height="100vh" src="{powerbi_embed_url}" frameborder="0" allowFullScreen="true"></iframe>
