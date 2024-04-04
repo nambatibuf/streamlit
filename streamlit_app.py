@@ -38,7 +38,7 @@ st.markdown("""
 # Home Page
 if page == 'Home':
     # Use the st.image function to display the image
-    st.image('your_image_url.jpg', width=300)  # Adjust the width as needed
+    st.image('your_image_url.jpeg', width=300)  # Adjust the width as needed
 
     # Your greeting and contact information
     st.markdown("""
