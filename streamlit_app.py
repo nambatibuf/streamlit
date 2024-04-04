@@ -7,7 +7,8 @@ st.set_page_config(page_title="Nikhil Ambati's Portfolio", page_icon=":bar_chart
 
 # Define the page navigation
 st.sidebar.title('Navigation')
-page = st.sidebar.radio('Go to', ['Home', 'Power BI Report', 'ML Model'], key='main_navigation')
+page = st.sidebar.radio('Go to', ['Home',  'Smart Farming', 'Power BI Report', 'ML Model'], key='main_navigation')
+
 
 def create_json_payload(input_data):
     return {
@@ -156,6 +157,8 @@ elif page == 'ML Model':
     st.sidebar.markdown('---')
     st.sidebar.info('This Streamlit app showcases the portfolio of Nikhil Ambati, a Data Engineer and Data Scientist.')
 
-
+elif page == 'Smart Farming':
+    st.title('Smart Farming')
+    
 st.sidebar.markdown('---')
 st.sidebar.info('This Streamlit app showcases the portfolio of Nikhil Ambati, a Data Engineer and Data Scientist.')
