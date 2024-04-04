@@ -38,7 +38,7 @@ st.markdown("""
 # Home Page
 if page == 'Home':
     # Display the round image using the "image-round" class
-    st.markdown(f"<div style='text-align: center'><img class='image-round' src='your_image_url.jpg'></div>", unsafe_allow_html=True)
+    st.markdown(f"<div style='text-align: center'><img class='image-round' src='your_image_url.jpg.jpeg'></div>", unsafe_allow_html=True)
     # ... rest of your home page content ...
     # Make sure to update the rest of the home page content according to the resume details provided above
 
