@@ -5,9 +5,13 @@ import requests
 # Page title and favicon for the entire app
 st.set_page_config(page_title="Nikhil Ambati's Portfolio", page_icon=":bar_chart:", layout="wide")
 
-# Define the page navigation
-st.sidebar.title('Navigation')
-page = st.sidebar.radio('Go to', ['Home',  'Smart Farming', 'Power BI Report', 'ML Model'], key='main_navigation')
+with st.container():
+    st.markdown("## Nikhil Ambati's Portfolio")
+    page = st.selectbox('Navigate to', ['Home', 'Projects', 'Power BI Report', 'ML Model'], index=0)
+    if page == 'Projects':
+        project_page = st.selectbox('Select Project', ['Smart Farming', 'Project 2', 'Project 3'])
+    else:
+        project_page = None
 
 
 def create_json_payload(input_data):
@@ -102,6 +106,67 @@ if page == 'Home':
     """)
     
     # Power BI Report Page
+
+elif project_page:
+    if project_page == 'Smart Farming':
+        # Smart Farming Project content
+        elif page == 'Smart Farming':
+            st.title('Smart Farming Initiative: Revolutionizing Agriculture with Data Analytics')
+        
+            st.markdown("""
+            ## Project Overview:
+        
+            In an age where agriculture meets digital innovation, the Smart Farming Initiative epitomizes the transformative power of data analytics. By leveraging a vast dataset from the USDA, we are pioneering a new approach to farming that enhances efficiency, sustainability, and economic viability. Our robust data pipeline offers unprecedented insights, guiding farmers and stakeholders towards environmentally conscious decisions that also boost profitability.
+        
+            ## Technical Architecture:
+        
+            The backbone of our initiative is the Azure Data Factory (ADF) pipeline, engineered for high-performance data handling:
+            
+            - **Data Ingestion**: Scheduled tasks faithfully gather the USDA datasets at 3:30 AM daily, ensuring that our data is as fresh as the morning harvest.
+            - **Extraction and Transformation**: Our pipeline adeptly processes the ZIP files, converting them into Parquet format within Azure Data Lake Storage Gen2—a testament to efficiency and scalability.
+            - **Orchestration and Logging**: Orchestrated workflows and meticulous logging are the unsung heroes, ensuring smooth operations and transparent process tracking.
+            - **Databricks Ecosystem**: Delta Lake on Databricks forms the sanctum for our data, enshrined with ACID transactions, while Hive metastore integration provides a structured query layer for analysis.
+        
+            ## Operational Excellence:
+        
+            Our pipeline is not just a marvel of automation; it's the standard-bearer for operational excellence in data-driven agriculture. Running transformations at 3:40 AM, we refine raw data into a canvas of intelligence that paints a clear picture of crop yields and farming practices.
+        
+            ## Impact:
+        
+            The Smart Farming Initiative isn't merely a project; it's a manifesto for the future of farming. By marrying cutting-edge technology with the timeless art of agriculture, we're equipping farmers with a powerful lens to view and optimize their practices.
+        
+            ## Enhancing Predictive Analytics and Visualization:
+        
+            The journey doesn't end with data collection and transformation; it extends into the realm of predictive analytics and rich visualizations:
+            
+            - **Interactive Dashboards**: Through Power BI, we offer a window into the soul of farming data, providing real-time insights and enabling deep dives into critical metrics.
+            
+            ## Machine Learning Advancements:
+        
+            We leverage Databricks' computational might to prepare our data for machine learning, setting the stage for predictive models that forecast crop yields with remarkable accuracy.
+            
+            - **Predictive Modeling**: We employ a dual-model strategy to classify crop yields and predict numerical outcomes, capturing the nuances of agricultural productivity.
+            - **Model Retraining Pipeline**: A dedicated pipeline for model retraining embodies our commitment to adaptability, ensuring our predictions evolve alongside the changing tides of data.
+        
+            ## Web Integration and Interactive Prediction:
+        
+            The initiative culminates in a user-friendly interface, where stakeholders engage with our models in real time to gain instant predictions:
+            
+            - **Real-Time Predictions**: Stakeholders can directly input parameters into our web portal, sparking our models to life and delivering predictions within moments.
+            
+            ## Accessibility:
+        
+            Hosted on a dedicated platform, our analytics tools break free from the confines of complexity, offering intuitive access to those who steward the land.
+        
+            Experience our Interactive Smart Farming Platform and see how data analytics is sowing seeds for a brighter agricultural future: [Launch the Platform](https://app-4zwfadkqr5d7vsetidxdhp.streamlit.app/).
+            """, unsafe_allow_html=True)
+
+    elif project_page == 'Project 2':
+        # Project 2 content
+        # ...
+    elif project_page == 'Project 3':
+        # Project 3 content
+        # ...
 elif page == 'Power BI Report':
     st.markdown(
         f"""
@@ -163,56 +228,6 @@ elif page == 'ML Model':
 
 # ... your existing Streamlit code ...
 
-elif page == 'Smart Farming':
-    st.title('Smart Farming Initiative: Revolutionizing Agriculture with Data Analytics')
-
-    st.markdown("""
-    ## Project Overview:
-
-    In an age where agriculture meets digital innovation, the Smart Farming Initiative epitomizes the transformative power of data analytics. By leveraging a vast dataset from the USDA, we are pioneering a new approach to farming that enhances efficiency, sustainability, and economic viability. Our robust data pipeline offers unprecedented insights, guiding farmers and stakeholders towards environmentally conscious decisions that also boost profitability.
-
-    ## Technical Architecture:
-
-    The backbone of our initiative is the Azure Data Factory (ADF) pipeline, engineered for high-performance data handling:
-    
-    - **Data Ingestion**: Scheduled tasks faithfully gather the USDA datasets at 3:30 AM daily, ensuring that our data is as fresh as the morning harvest.
-    - **Extraction and Transformation**: Our pipeline adeptly processes the ZIP files, converting them into Parquet format within Azure Data Lake Storage Gen2—a testament to efficiency and scalability.
-    - **Orchestration and Logging**: Orchestrated workflows and meticulous logging are the unsung heroes, ensuring smooth operations and transparent process tracking.
-    - **Databricks Ecosystem**: Delta Lake on Databricks forms the sanctum for our data, enshrined with ACID transactions, while Hive metastore integration provides a structured query layer for analysis.
-
-    ## Operational Excellence:
-
-    Our pipeline is not just a marvel of automation; it's the standard-bearer for operational excellence in data-driven agriculture. Running transformations at 3:40 AM, we refine raw data into a canvas of intelligence that paints a clear picture of crop yields and farming practices.
-
-    ## Impact:
-
-    The Smart Farming Initiative isn't merely a project; it's a manifesto for the future of farming. By marrying cutting-edge technology with the timeless art of agriculture, we're equipping farmers with a powerful lens to view and optimize their practices.
-
-    ## Enhancing Predictive Analytics and Visualization:
-
-    The journey doesn't end with data collection and transformation; it extends into the realm of predictive analytics and rich visualizations:
-    
-    - **Interactive Dashboards**: Through Power BI, we offer a window into the soul of farming data, providing real-time insights and enabling deep dives into critical metrics.
-    
-    ## Machine Learning Advancements:
-
-    We leverage Databricks' computational might to prepare our data for machine learning, setting the stage for predictive models that forecast crop yields with remarkable accuracy.
-    
-    - **Predictive Modeling**: We employ a dual-model strategy to classify crop yields and predict numerical outcomes, capturing the nuances of agricultural productivity.
-    - **Model Retraining Pipeline**: A dedicated pipeline for model retraining embodies our commitment to adaptability, ensuring our predictions evolve alongside the changing tides of data.
-
-    ## Web Integration and Interactive Prediction:
-
-    The initiative culminates in a user-friendly interface, where stakeholders engage with our models in real time to gain instant predictions:
-    
-    - **Real-Time Predictions**: Stakeholders can directly input parameters into our web portal, sparking our models to life and delivering predictions within moments.
-    
-    ## Accessibility:
-
-    Hosted on a dedicated platform, our analytics tools break free from the confines of complexity, offering intuitive access to those who steward the land.
-
-    Experience our Interactive Smart Farming Platform and see how data analytics is sowing seeds for a brighter agricultural future: [Launch the Platform](https://app-4zwfadkqr5d7vsetidxdhp.streamlit.app/).
-    """, unsafe_allow_html=True)
 
 # ... the rest of your Streamlit code ...
 
