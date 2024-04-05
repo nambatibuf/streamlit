@@ -163,9 +163,11 @@ elif project_page:
     elif project_page == 'Project 2':
         # Project 2 content
         # ...
+        pass
     elif project_page == 'Project 3':
         # Project 3 content
         # ...
+        pass
 elif page == 'Power BI Report':
     st.markdown(
         f"""
